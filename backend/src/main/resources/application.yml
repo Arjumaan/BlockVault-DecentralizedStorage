@@ -1,0 +1,71 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: BlockVault
+  
+  # Database Configuration (H2 for development)
+  datasource:
+    url: jdbc:h2:file:./data/blockvault
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  
+  # File Upload Settings
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+      enabled: true
+
+# IPFS Configuration
+ipfs:
+  host: localhost
+  port: 5001
+  protocol: http
+  timeout: 120000
+
+# JWT Configuration
+jwt:
+  secret: BlockVault-Super-Secret-Key-Change-This-In-Production-2024
+  expiration: 86400000 # 24 hours in milliseconds
+
+# CORS Configuration
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:5500,http://127.0.0.1:5500,file://
+  allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+  allowed-headers: "*"
+  allow-credentials: true
+
+# BlockVault Configuration
+blockvault:
+  storage:
+    default-quota: 5368709120 # 5GB in bytes
+  encryption:
+    algorithm: AES
+    key-size: 256
+  blockchain:
+    enabled: false
+    network: polygon-mumbai
+    contract-address: ""
+
+logging:
+  level:
+    com.blockvault: DEBUG
+    org.springframework.security: DEBUG

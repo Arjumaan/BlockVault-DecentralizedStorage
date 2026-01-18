@@ -1,0 +1,75 @@
+# Backend - Compiled files
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.ear
+backend/*.class
+
+# Backend - Database
+backend/data/
+backend/*.db
+backend/*.h2.db
+
+# Backend - IDE
+backend/.idea/
+backend/*.iml
+backend/.vscode/
+backend/.settings/
+backend/.classpath
+backend/.project
+
+# Backend - Maven
+backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# Environment variables
+.env
+.env.local
+.env.production
+backend/.env
+
+# Logs
+*.log
+backend/logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+.cache/
+
+# Node modules (if using npm for frontend dev tools)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE - General
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.code-workspace
+
+# IPFS local data
+.ipfs/
+
+# Test files
+test-uploads/
+test-*.txt
+test-*.pdf
+
+# Sensitive data
+*.key
+*.pem
+*.p12
+secrets/
